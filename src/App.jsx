@@ -55,6 +55,7 @@ const App = () => {
     return <h2>There was an error</h2>;
   }
 
+  // conditional render where there are no more tours in the array.
   if (tours.length === 0) {
     return (
       <main>
