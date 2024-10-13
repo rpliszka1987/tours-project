@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Tour from './components/Tour';
 
 const url = 'https://www.course-api.com/react-tours-project';
 
@@ -40,6 +41,10 @@ const App = () => {
     return <h2>There was an error</h2>;
   }
 
-  return <div>{console.log(tours)}</div>;
+  return (
+    <div>
+      <Tour data={tours} />
+    </div>
+  );
 };
 export default App;
