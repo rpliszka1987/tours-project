@@ -20,6 +20,7 @@ const App = () => {
 
   // Function to fetch the data from the url
   const fetchTours = async () => {
+    setIsLoading(true);
     try {
       const resp = await fetch(url);
 
@@ -52,6 +53,24 @@ const App = () => {
 
   if (isError) {
     return <h2>There was an error</h2>;
+  }
+
+  if (tours.length === 0) {
+    return (
+      <main>
+        <div className="title">
+          <h2>no tours left</h2>
+          <button
+            type="button"
+            style={{ marginTop: '2rem' }}
+            className="btn"
+            onClick={() => fetchTours()}
+          >
+            refresh
+          </button>
+        </div>
+      </main>
+    );
   }
 
   return (
