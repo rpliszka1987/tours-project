@@ -1,6 +1,6 @@
 import Tour from './Tour';
 
-const Tours = ({ data }) => {
+const Tours = ({ data, removeTours }) => {
   return (
     <section>
       <div className="title">
@@ -9,7 +9,7 @@ const Tours = ({ data }) => {
       </div>
       <div className="tours">
         {data.map((tour) => {
-          return <Tour key={tour.id} {...tour} />
+          return <Tour key={tour.id} {...tour} removeTours={removeTours} />;
         })}
       </div>
     </section>

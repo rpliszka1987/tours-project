@@ -12,6 +12,12 @@ const App = () => {
   // State which will hold data fetched from API
   const [tours, setTours] = useState([]);
 
+  // Function to remove the unwanted tour.
+  const removeTours = (id) => {
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  };
+
   // Function to fetch the data from the url
   const fetchTours = async () => {
     try {
@@ -50,7 +56,7 @@ const App = () => {
 
   return (
     <main>
-      <Tours data={tours} />
+      <Tours data={tours} removeTours={removeTours} />
     </main>
   );
 };
