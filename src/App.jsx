@@ -13,7 +13,7 @@ const App = () => {
   const [tours, setTours] = useState([]);
 
   // Function to remove the unwanted tour.
-  const removeTours = (id) => {
+  const removeTour = (id) => {
     const newTours = tours.filter((tour) => tour.id !== id);
     setTours(newTours);
   };
@@ -56,7 +56,7 @@ const App = () => {
 
   return (
     <main>
-      <Tours data={tours} removeTours={removeTours} />
+      <Tours data={tours} removeTour={removeTour} />
     </main>
   );
 };
